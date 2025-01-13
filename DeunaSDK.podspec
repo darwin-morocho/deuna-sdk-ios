@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
     
     # Archivos fuente
     s.source_files     = 'Sources/DeunaSDK/**/*.{h,m,swift}'
+  
 
-    s.dependency 'deuna-ios-client', :git => 'https://github.com/deuna-developers/deuna-ios-client.git', :tag => '1.4.11'
   end
