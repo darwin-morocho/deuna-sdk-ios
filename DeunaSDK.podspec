@@ -19,4 +19,5 @@ Pod::Spec.new do |s|
   
     # Declarar la dependencia a DEUNAClient
     s.dependency 'DEUNAClient'
+    s.dependency 'AnyCodable-FlightSchool', '~> 0.6.0'
   end
