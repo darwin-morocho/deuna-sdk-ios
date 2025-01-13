@@ -17,5 +17,6 @@ Pod::Spec.new do |s|
     # Archivos fuente
     s.source_files     = 'Sources/DeunaSDK/**/*.{h,m,swift}'
   
-
+    # Declarar la dependencia a DEUNAClient
+    s.dependency 'DEUNAClient'
   end
