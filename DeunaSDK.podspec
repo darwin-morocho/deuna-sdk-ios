@@ -27,4 +27,15 @@ Pod::Spec.new do |s|
     'DEFINES_MODULE' => 'YES',
     'LD_RUNPATH_SEARCH_PATHS' => '$(inherited) @executable_path/Frameworks'
   }
+
+  # Script para firmar el framework después de compilar
+  s.script_phase = {
+    :name => 'Sign AnyCodable Framework',
+    :script => <<-SCRIPT
+      if [ -d "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnyCodable.framework" ]; then
+        codesign --force --sign "${CODE_SIGN_IDENTITY}" --preserve-metadata=identifier,entitlements "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnyCodable.framework"
+      fi
+    SCRIPT
+  }
+
 end
